@@ -1,0 +1,4 @@
+egovframework\test\service\impl\TestMapper.class
+egovframework\test\web\TestController.class
+egovframework\test\service\impl\TestServiceImpl.class
+egovframework\test\service\TestService.class
