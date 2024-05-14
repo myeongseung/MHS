@@ -34,6 +34,7 @@ margin :0px 0px 0px 0px;
 </style>
 </head>
 <body topmargin="0" leftmargin="0" style="margin :0px;">
+${ data }
 <iframe name="ifcal" src="<c:url value='/sym/cmm/EgovselectNormalCalendar.do'/>" style="width:275px; height:200px;" frameborder="0" scrolling="no" title="달력호출"></iframe>
 </body>
 </html>

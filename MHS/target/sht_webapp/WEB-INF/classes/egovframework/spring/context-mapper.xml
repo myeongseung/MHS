@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- SqlSession setup for MyBatis Database Layer -->
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:/egovframework/sqlmap/oracle/sql-mapper-config.xml" />
+		<property name="mapperLocations" value="classpath:/egovframework//sqlmap/oracle/mappers/**/*.xml" />
+	</bean>
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> 
+	    <property name="url" value="jdbc:oracle:hxlab.co.kr:3999/XE"></property>
+	    <property name="username" value="ncom"></property>
+	    <property name="password" value="sksmsahffkdy"></property>
+	</bean>
+	<!-- MapperConfigurer setup for MyBatis Database Layer with @Mapper("deptMapper") in DeptMapper Interface -->
+ 	<bean class="egovframework.rte.psl.dataaccess.mapper.MapperConfigurer">
+		<property name="basePackage" value="egovframework" />
+	</bean>
+</beans>
+
+<!-- 
+	 context-mapper.xml 파일은 DB와 MyBatis framework를 연동하는 설정 파일이다.
+	 
+	 dataSource : context-datasource.xml 파일에 있는 id가 dataSource인 bean을 참조하여 MyBatis와 DB 연동
+	  
+	 configLoaction : MyBatis 설정이 담겨있는 xml 파일이 위치한 경로를 잡아준다.
+
+     mapperLocations : DB에 보낼 쿼리가 담겨있는 MyBatis의 xml 파일들이 위치한 경로를 잡아준다.
+ -->
