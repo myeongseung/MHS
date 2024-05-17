@@ -7,5 +7,6 @@
 			alias 설정    	
 			<typeAlias alias="" type=""/>
     	 -->
+    	 <typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
     </typeAliases>
 </configuration>
