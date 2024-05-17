@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.survey.service.impl.SurveyMapper">
+
+
+	<insert id="insertUser" parameterType="hashmap">
+		INSERT INTO HLTH_USER (
+			USER_ID,
+			USER_NM,
+			TARGET_TYPE_ID,
+			BRTH_DT,
+			TEL,
+			GNDR,
+			EMAIL,
+			ADRES,
+			ADRES_DTL,
+			SNGLE_HSHL
+		) VALUES (
+			#{user_id},
+			#{user_nm},
+			#{target_type_id},
+			#{brth_dt},
+			#{tel},
+			#{gndr},
+			#{email},
+			#{adres},
+			#{adres_dtl},
+			#{sngle_hshl}
+		)
+	</insert>
+</mapper>
